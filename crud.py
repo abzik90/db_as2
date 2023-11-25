@@ -3,10 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-password = 'password'
-db_name = "db_as2"
-db_username = "root"
-db_link = "localhost:3306"
+password = 'xIJlkJ5yzp'
+db_name = "sql11664917"
+db_username = "sql11664917"
+db_link = "sql11.freemysqlhosting.net:3306"
 # MySQL database connection URL
 database_url = f'mysql+mysqlconnector://{db_username}:{password}@{db_link}/{db_name}'
 
