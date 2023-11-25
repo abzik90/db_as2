@@ -1,16 +1,16 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-
+import os
 app = Flask(__name__)
-password = 'xIJlkJ5yzp'
-db_name = "sql11664917"
-db_username = "sql11664917"
-db_link = "sql11.freemysqlhosting.net:3306"
+# password = 'password'
+# db_name = "as_db2"
+# db_username = "root"
+# db_link = "localhost:3306"
+mysql_url = os.environ.get('mysql_url')
 # MySQL database connection URL
-database_url = f'mysql+mysqlconnector://{db_username}:{password}@{db_link}/{db_name}'
-
-app.config['SQLALCHEMY_DATABASE_URI'] = database_url
+# database_url = f'mysql+mysqlconnector://{db_username}:{password}@{db_link}/{db_name}'
+app.config['SQLALCHEMY_DATABASE_URI'] = mysql_url
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
