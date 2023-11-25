@@ -1,5 +1,4 @@
 Flask
 gunicorn
-wfastcgi
 mysql-connector-python
 sqlalchemy
