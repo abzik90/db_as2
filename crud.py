@@ -39,7 +39,6 @@ class Member(db.Model):
     __tablename__ = "MEMBER"
     member_user_id = db.Column(db.Integer, db.ForeignKey('MEMBER.member_user_id'), primary_key=True)
     house_rules = db.Column(db.Text)
-    user_id = db.Column(db.Integer, db.ForeignKey('USER.user_id'), nullable=False)
 
 class Address(db.Model):
     __tablename__ = "ADDRESS"
