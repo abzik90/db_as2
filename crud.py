@@ -211,16 +211,14 @@ def get_caregiver(caregiver_user_id):
 @app.route('/members', methods=['GET'])
 def get_members():
     members = Member.query.all()
-    member_list = [{'member_user_id': member.member_user_id, 'house_rules': member.house_rules,
-                    'user_id': member.user_id} for member in members]
+    member_list = [{'member_user_id': member.member_user_id, 'house_rules': member.house_rules} for member in members]
     return jsonify(member_list)
 
 @app.route('/members/<int:member_user_id>', methods=['GET'])
 def get_member(member_user_id):
     member = Member.query.get(member_user_id)
     if member:
-        member_data = {'member_user_id': member.member_user_id, 'house_rules': member.house_rules,
-                       'user_id': member.user_id}
+        member_data = {'member_user_id': member.member_user_id, 'house_rules': member.house_rules}
         return jsonify(member_data)
     return jsonify({'message': 'Member not found'}), 404
 
